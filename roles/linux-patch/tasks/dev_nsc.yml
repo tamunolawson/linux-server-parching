@@ -1,0 +1,11 @@
+---
+
+- name: Retrieve Set Facts file
+  include: set_facts.yml
+
+- debug:
+    var: "{{ activation_key }}"
+
+- name: Unregister the subscription
+  shell: |
+    subscription-manager unregister
